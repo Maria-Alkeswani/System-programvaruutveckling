@@ -1,0 +1,56 @@
+@startuml 
+
+Analysis_CSV  : + analysis_all_games()
+Analysis_CSV  : + analysis_parts() 
+Analysis_CSV  : + analysis_parts_totalTime()
+Analysis_CSV  : + analysis_parts_games()
+Analysis_CSV  : + analysis_parts_time() 
+Analysis_CSV  : + csv_analysis() 
+Analysis_CSV  : + csv_create_files() 
+Analysis_CSV  : + appendStrToFile() 
+Analysis_CSV  : + getName_semicolon() 
+Analysis_CSV  : + data_sort()
+Analysis_CSV  : + Atoi()
+
+Game : + t1 : int
+Game : + t2 : int
+Game : + time : int
+Game : + break_time : int
+Game : + Game ()
+
+Gamer : + t1 : int
+Gamer : + t2 : int
+Gamer : + s1 : int
+Gamer : + s2 : int
+Gamer : + check_g[] : int
+Gamer : + check_t[] : int
+Gamer : + Gamer ()
+
+Games_table : + k : int
+Games_table : + sections[]: string
+Games_table : + groups[] : string
+Games_table : + days[] : string
+Games_table : + final_table()
+Games_table : + days_write()
+Games_table : +  games_table()
+
+Games_time : + main()
+
+Time_data  : + time_format()
+
+Final : - result_gamer : int
+Final : - result_time() 
+
+
+Analysis_CSV --> Games_table
+Game --> Games_table
+Gamer --> Games_table
+Time_data --> Games_table
+Final --|> Games_table
+Games_table --> Games_time
+Analysis_CSV --> Games_time
+Final --|> Games_time
+
+
+
+@enduml
